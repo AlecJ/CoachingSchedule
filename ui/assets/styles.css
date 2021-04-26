@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+#test {
+    display: grid;
+    grid-template-rows: 90px 100px;
+}
+
+#header {
+    height: 50px;
+    background-image: url("./images/dark-noise.png");
+}
+
+#body {
+    display: grid;
+    align-items: center;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    grid-template-columns: minmax(240px, 1fr) minmax(240px, 3fr);
+
+    gap: 1em;
+    grid-auto-rows: minmax(80px, auto);
+    height: calc(100vh - 2em - 50px);
+    background-image: url("./images/light-noise.png");
+    padding: 1em;
+}
+
+#news {
+    height: 100%;
+    background-color: yellow;
+    opacity: 0.65;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+#activeUsers {
+    height: 100%;
+    background-color: green;
+    opacity: 0.65;
+    /* margin: 1em; */
+    grid-column: 2 / span 3;
+    grid-row: 1;
+}
+
+#chat {
+    height: 100%;
+    background-color: white;
+    opacity: 0.65;
+    /* margin: 1em; */
+    grid-column: 1;
+    grid-row: 4 / span 6;
+}
+
+#schedule {
+    height: 100%;
+    background-color: aqua;
+    opacity: 0.65;
+    /* margin: 1em; */
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 8;
+}
