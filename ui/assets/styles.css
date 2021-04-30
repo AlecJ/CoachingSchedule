@@ -42,6 +42,18 @@ body {
     max-width: 400px;
     background-color: yellow;
     opacity: 0.65;
+    padding: 5px;
+
+    display: grid;
+    justify-items: center;
+    grid-template-rows: repeat(3, minmax(80px, auto));
+    gap: 0.5em;
+}
+
+#newsitem {
+    width: 320px;
+    height: 1fr;
+    background: red;
 }
 
 #activeUsers {
@@ -95,13 +107,17 @@ body {
 @media only screen and (max-width: 767px) {
 
     #body {
-        grid-template-columns: minmax(240px, 1fr);
+        grid-template-columns: minmax(320px, 1fr);
         justify-items: center;
     }
 
     #news {
+        max-height: 168px;
+        overflow: hidden;
         grid-column: 1;
         grid-row: 1 / span 2;
+        grid-template-rows: repeat(2, minmax(80px, auto));
+
     }
 
     #activeUsers {
