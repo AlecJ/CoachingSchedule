@@ -149,13 +149,16 @@ body {
 }
 
 #schedule {
+    padding: auto;
     height: 100%;
     width: 100%;
     /* background-color: aqua; */
     opacity: 0.65;
 
     display: grid;
-    grid-template-columns: 40px repeat(3, 1fr);
+    /* align-items: center; */
+    /* justify-items: center; */
+    grid-template-columns: 40px repeat(3, minmax(240px, 1fr));
     /* grid-template-rows: repeat(24, 60px); */
     /* column-gap: 0.5em; */
 
@@ -164,6 +167,10 @@ body {
 
 #time {
     grid-column: 1;
+}
+
+#day1, #day2, #day3 {
+    width: 100%;
 }
 
 #day1 {
@@ -179,6 +186,34 @@ body {
 #day3 {
     grid-column: 4;
     background-color: yellow;
+}
+
+/* Hide day 3 on medium screens */
+@media only screen and (max-width: 1158px) {
+    
+    #schedule {
+        grid-template-columns: 40px repeat(2, minmax(240px, 1fr));
+    }
+
+    #day3 {
+        display: none;
+    }
+
+}
+
+/* Hide day 2 on small screens */
+@media only screen and (max-width: 918px) {
+    
+    #schedule {
+        max-width: 450px;
+        margin: auto;
+        grid-template-columns: 40px minmax(240px, 400px);
+    }
+
+    #day2, #day3 {
+        display: none;
+    }
+
 }
 
 .embed-twitter {
