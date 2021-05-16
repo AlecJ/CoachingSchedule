@@ -6,7 +6,7 @@ RUN npm install
 COPY ./ui .
 RUN npm run build
 
-# build flask app
+# build fast api app
 # TODO
 
 # wrap with an nginx server for the final image
